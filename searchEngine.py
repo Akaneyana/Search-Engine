@@ -1,5 +1,5 @@
-def readFile(filnavn):
-    with open(filnavn, "r") as file:
+def readFile(fileName):
+    with open(fileName, "r") as file:
         return file.readlines()
     
 file_lines = readFile("tekstfil.txt") # runs the function above called readFile
@@ -11,6 +11,12 @@ def get_input():
 def menuchosen(choice):
     if choice == "1":
         printText()
+    elif choice == "2":
+        printWord()
+    elif choice == "3":
+        findWord()
+    elif choice == "4":
+        findLine()
     elif choice == "5":
         countWord()
     elif choice == "6":
@@ -22,6 +28,35 @@ def menuchosen(choice):
 def printText():
     for line in file_lines:
         print(line, end="")  #end= makes it so there isnt a gap between each line
+    get_input()
+
+def printWord():
+    pWord = input("Chose a word: ")
+    for line in file_lines:
+        if pWord in line:
+            print(pWord)
+            break
+    else:
+        print("Word not found")
+    get_input()
+
+def findWord():
+    tfWord = input("Chose a word: ")
+    for line in file_lines:
+        if tfWord in line:
+            print(True)
+            break
+    else:
+        print(False)
+    get_input()
+
+def findLine():
+    keyWord = input("Choose a word: ")
+    for line in file_lines:
+        if keyWord in line:
+            print(line, end="")
+    if not any(keyWord in line for line in file_lines):
+        print(f"The word '{keyWord}' was not found.")
     get_input()
 
 def countWord():
