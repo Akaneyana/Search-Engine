@@ -5,6 +5,14 @@ def readFile(fileName):
 file_lines = readFile("tekstfil.txt") # runs the function above called readFile
 
 def get_input():
+    print ("--------------------Search Engine--------------------")
+    print ("| 1. Print the entire Text                          |")
+    print ("| 2. Prints the word if its found                   |")
+    print ("| 3. Prints True or False if its found or not       |")
+    print ("| 4. Prints the line the word it is in              |")
+    print ("| 5. Prints how many one word there                 |")
+    print ("| 6. End                                            |")
+    print ("-----------------------------------------------------")
     menuchoice = input("Choose an option: ")
     menuchosen(menuchoice)
 
